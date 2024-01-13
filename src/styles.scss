@@ -1,0 +1,26 @@
+
+body {
+  background: #FAF0E6;
+  font-family: Verdana, sans-serif;
+}
+.main-page, header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 40px;
+}
+.main-page {
+  .content {
+    display: grid;
+    grid-template-columns: 450px 450px;
+    grid-column-gap: 20px;
+    padding-top: 30px;
+    section {
+      padding: 10px;
+      border: 2px solid;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
