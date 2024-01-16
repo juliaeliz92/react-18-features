@@ -6,19 +6,34 @@ import Suspense from "./Suspense";
 import "./styles.scss";
 
 function App() {
+  const scrollDownToLearMore = () => {
+    const learnMore = document.getElementById('learn-more-section');
+    learnMore.scrollIntoView({ behavior: "smooth"});
+  }
   return (
-    <div className="main-page">
-      <header>
-        <h2>
-          <i className="fa-brands fa-react"></i>REACT 18 FEATURES
-        </h2>
+    <>
+      <div className="hero-image">
+          <div className="title">
+            <h2>
+              <i className="fa-brands fa-react"></i>REACT 18 FEATURES
+            </h2>
+            <button onClick={() => scrollDownToLearMore()}>Learn More</button>
+          </div>
+        </div>
+      <div id="learn-more-section">
         <span>
-          &#128064; Learning with exampled is so easy! React 18 introduced cool
-          new features include concurrency that set an impact on performance,
+          Learning with examples is so easy! React 18 introduced cool
+          new features that set an impact on performance,
           compact error catching and eased rendering. I have made a few easy
-          examples that exhibits the features.&#128204;
+          examples that exhibits the features listed below. Click on a feature to see the example.
         </span>
-      </header>
+        <ul id="feature-list">
+          <li>Error Boundary</li>
+          <li>Automatic Batching</li>
+          <li>Transition</li>
+          <li>Suspense</li>
+        </ul>
+      </div>
       <div className="content">
         <section>
           <h3>&#128680;Error Boundary</h3>
@@ -66,7 +81,7 @@ function App() {
           </p>
         </section>
       </div>
-    </div>
+    </>
   );
 }
 
