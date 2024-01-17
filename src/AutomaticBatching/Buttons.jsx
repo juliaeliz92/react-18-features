@@ -18,26 +18,36 @@ export default function Buttons() {
   };
   return (
     <div>
-      <p>Click on the button</p>
-      <button
-        onClick={() => {
-          handleOnClick();
-        }}
-      >
-        Click Me!
-      </button>
-      <div>Add Count: {additionCount}</div>
-      <div>Substraction Count: {subtractionCount}</div>
+      <div>
+        <p>Click on the button</p>
+        <div className="button-example">
+          <button
+            onClick={() => {
+              handleOnClick();
+            }}
+          >
+            Click Me!
+          </button>
+          <div>
+            <p>Add Count: {additionCount}</p>
+            <p>Substraction Count: {subtractionCount}</p>
+          </div>
+        </div>
+      </div>
       <p>Now click here</p>
-      <button
-        onClick={() => {
-          handleOnClickOnAsync();
-        }}
-      >
-        Click Me With Async!
-      </button>
-      <div>Add Count: {additionCountOnAsync}</div>
-      <div>Substraction Count: {subtractionCountOnAsync}</div>
+      <div className="button-example">
+        <button
+          onClick={() => {
+            handleOnClickOnAsync();
+          }}
+        >
+          Click Me With Async!
+        </button>
+        <div>
+          <p>Add Count: {additionCountOnAsync}</p>
+          <p>Substraction Count: {subtractionCountOnAsync}</p>
+        </div>
+      </div>
     </div>
   );
 }

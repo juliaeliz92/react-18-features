@@ -16,9 +16,12 @@ class ClickHere extends React.Component {
       throw new Error("click reached limit");
     }
     return (
-      <button onClick={this.setCounter}>
+      <div className="click-here">
+        <button onClick={this.setCounter}>
+        Click me!
+        </button>
         Clicked times {this.state.counter}
-      </button>
+       </div>
     );
   }
 }

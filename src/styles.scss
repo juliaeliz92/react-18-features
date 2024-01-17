@@ -40,7 +40,7 @@ html {
       transform: translate(-50%, -50%);
       color: white;
       animation-name: titleeasein;
-      animation-duration: 4s;
+      animation-duration: 2s;
     }
   }
 
@@ -53,9 +53,30 @@ html {
     flex-direction: column;
     ul {
       list-style-type: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       li {
         margin-top: 20px;
-        
+        @keyframes hoverlistname {
+          0% {
+            margin-left: 0;
+          }
+          50% {
+            margin-left: 8px;
+            color: blueviolet;
+          }
+          100% {
+            margin-left: 0;
+            color: black;
+          }
+        }
+        &:hover {
+          animation: hoverlistname 2s forwards ;
+          animation-iteration-count: infinite;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -66,15 +87,34 @@ html {
 
 
 .content {
-  display: grid;
-  grid-template-columns: 450px 450px;
-  grid-column-gap: 20px;
-  padding-top: 30px;
-
   section {
-    padding: 10px;
-    border: 2px solid;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    button {
+      color: black;
+      border: 1px solid;
+      cursor: pointer;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .click-here {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      margin-top: 10px;
+    }
+    .button-example {
+      display: flex;
+      align-items: center;
+      border: 1px solid;
+      padding: 10px;
+      background-color: cornsilk;
+      button {
+        margin-right:15px;
+      }
+    }
   }
 }

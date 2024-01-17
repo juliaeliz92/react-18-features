@@ -6,8 +6,8 @@ import Suspense from "./Suspense";
 import "./styles.scss";
 
 function App() {
-  const scrollDownToLearMore = () => {
-    const learnMore = document.getElementById('learn-more-section');
+  const scrollDownToSection = (sectionId) => {
+    const learnMore = document.getElementById(sectionId);
     learnMore.scrollIntoView({ behavior: "smooth"});
   }
   return (
@@ -17,7 +17,7 @@ function App() {
             <h2>
               <i className="fa-brands fa-react"></i>REACT 18 FEATURES
             </h2>
-            <button onClick={() => scrollDownToLearMore()}>Learn More</button>
+            <button onClick={() => scrollDownToSection('learn-more-section')}>Learn More</button>
           </div>
         </div>
       <div id="learn-more-section">
@@ -28,33 +28,45 @@ function App() {
           examples that exhibits the features listed below. Click on a feature to see the example.
         </span>
         <ul id="feature-list">
-          <li>Error Boundary</li>
-          <li>Automatic Batching</li>
-          <li>Transition</li>
-          <li>Suspense</li>
+          <li onClick={() => scrollDownToSection('error-boundary')}>
+            <i className="fa-solid fa-laptop-code"></i> <span>Error Boundary</span>
+          </li>
+          <li onClick={() => scrollDownToSection('automatic-batching')}>
+            <i className="fa-solid fa-laptop-code"></i> <span>Automatic Batching</span>
+          </li>
+          <li onClick={() => scrollDownToSection('transition')}>
+            <i className="fa-solid fa-laptop-code"></i> <span>Transition</span>
+          </li>
+          <li onClick={() => scrollDownToSection('suspense')}>
+            <i className="fa-solid fa-laptop-code"></i> <span>Suspense</span>
+            </li>
         </ul>
       </div>
       <div className="content">
-        <section>
-          <h3>&#128680;Error Boundary</h3>
-          <p>Fifth click trigger an error on this button</p>
+        <section id="error-boundary">
+          <h2>&#128680;Error Boundary</h2>
+          <p>This feature is handful when you need to compartmentalize errors into a component or a group of components by encapsulating the said component(s) by Error Boundaries so that the error will not spill out into the whole document. You will need to create Error Boundary to customize the error handling. </p>
+          <p>Let's try with this example.</p>
+          <p>Fifth click trigger an error on this button.</p>
           <ErrorBoundary>
             <ClickHere triggerOnClick={5} />
           </ErrorBoundary>
-
+          <br/>
+          <br/>
           <p>Now try clicking twice on this button</p>
           <ErrorBoundary>
             <ClickHere triggerOnClick={2} />
           </ErrorBoundary>
-
+          <br/>
           <p>
-            &#128393;As you can see, the error boundaries works as a try catch
+            &#128393;As you can see, the error boundaries work as a try catch
             block except on components. This will not affect on other
             components.
           </p>
         </section>
-        <section>
+        <section id='automatic-batching'>
           <h3>&#128230;Automatic Batching</h3>
+          <p>The beauty of this feature is accumulating multiple state updates into a single update including updates from promise, event handlers and timeout which improves the performance.</p>
           <p>Turn on console log to behold the power of automatic batching!</p>
           <Buttons />
           <p>
@@ -62,7 +74,7 @@ function App() {
             prevent unnecessary component rerendering even with async events.
           </p>
         </section>
-        <section>
+        <section id='transition'>
           <h3>&#8634;Transition</h3>
           <Transitions />
           <p>
@@ -72,7 +84,7 @@ function App() {
             former function.
           </p>
         </section>
-        <section>
+        <section id='suspense'>
           <h3>&#8987;Suspense</h3>
           <p>Click on the button to reveal a secret message</p>
           <Suspense />
