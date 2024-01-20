@@ -4,7 +4,6 @@ export default function Transitions() {
   const [multiplier, setMultiplier] = useState("");
   const [secretMessage, setMessage] = useState("");
   const [isPending, startTransition] = useTransition();
-
   const onChangeInput = (input) => {
     startTransition(() => {
       if (input.length) {
@@ -19,19 +18,35 @@ export default function Transitions() {
     setMultiplier(input);
   };
   return (
-    <div className="main-content">
+    <div>
       <p>
         Let's start entering a number, The example will return number of
         multiples of the number you entered for upto 500000000
       </p>
-      <input
-        value={multiplier}
-        type="number"
-        min={1}
-        max={500000000}
-        onChange={(e) => onChangeInput(e.target.value)}
-      />
-      <div>{isPending ? "Loading" : <p>{secretMessage}</p>}</div>
+      <div className="example">
+        <input
+          value={multiplier}
+          type="number"
+          min={1}
+          max={500000000}
+          onChange={(e) => onChangeInput(e.target.value)}
+        />
+        <div>{isPending ? "Loading" : <p>{secretMessage}</p>}</div>
+      </div>
+      <p>This is how the code goes.</p>
+      <div className="example">
+        <pre>
+          <code>
+          { 
+            `const onChangeInput = (input) => {
+              startTransition(() => {
+                \\\\ insert code here..
+              });
+              setMultiplier(input);
+            };` }
+            </code>
+        </pre>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { Suspense, useState } from "react";
 import SuspenseChild from "./SuspenseChild";
-import "./styles.scss";
 
 export default function SuspenseExample() {
   const [message, setMessage] = useState('')
@@ -8,6 +7,7 @@ export default function SuspenseExample() {
   return (
     <div>
       <button
+        className="feature-buttons"
         onClick={() => setMessage(true)}
       >
         Submit 
