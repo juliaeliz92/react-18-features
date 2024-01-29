@@ -15,18 +15,19 @@ export default function ButtonExample({isAsync = false}) {
         }
     };
     return (
-    <div className="example">
-        <button
-            className="feature-buttons"
-            onClick={() => {
-                handleOnClick();
-            }}
-        >
-            Click Me!
-        </button>
-        <div>
-            <p>Add Count: {additionCount}</p>
-            <p>Substraction Count: {subtractionCount}</p>
+    <div className="example-container">
+        <div className="example">
+            <button
+                onClick={() => {
+                    handleOnClick();
+                }}
+            >
+                Click Me!
+            </button>
+            <div>
+                <p>Add Count: {additionCount}</p>
+                <p>Substraction Count: {subtractionCount}</p>
+            </div>
         </div>
     </div>)
 }
