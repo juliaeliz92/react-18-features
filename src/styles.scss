@@ -113,14 +113,12 @@ html {
     section {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       height: 100vh;
       border-bottom: 1px solid #d3d3d3;
       padding: 0 30px;
       div {
-        max-width: 50vw;
-        &.content {
-          padding-right: 15px;
-        }
+          max-width: 40vw;
       }
       p {
         margin-top: 10px;

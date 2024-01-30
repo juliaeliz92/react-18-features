@@ -23,29 +23,33 @@ export default function Transitions() {
         Let's start entering a number, The example will return number of
         multiples of the number you entered for upto 500000000
       </p>
-      <div className="example">
-        <input
-          value={multiplier}
-          type="number"
-          min={1}
-          max={500000000}
-          onChange={(e) => onChangeInput(e.target.value)}
-        />
-        <div>{isPending ? "Loading" : <p>{secretMessage}</p>}</div>
+      <div className="example-container">
+        <div className="example">
+          <input
+            value={multiplier}
+            type="number"
+            min={1}
+            max={500000000}
+            onChange={(e) => onChangeInput(e.target.value)}
+          />
+          <div>{isPending ? "Loading" : <p>{secretMessage}</p>}</div>
+        </div>
       </div>
       <p>This is how the code goes.</p>
-      <div className="example">
-        <pre>
-          <code>
-          { 
-            `const onChangeInput = (input) => {
-              startTransition(() => {
-                \\\\ insert code here..
-              });
-              setMultiplier(input);
-            };` }
-            </code>
-        </pre>
+      <div className="example-container">
+        <div className="example">
+          <pre>
+            <code>
+            { 
+              `const onChangeInput = (input) => {
+                startTransition(() => {
+                  \\\\ insert code here..
+                });
+                setMultiplier(input);
+              };` }
+              </code>
+          </pre>
+        </div>
       </div>
     </div>
   );

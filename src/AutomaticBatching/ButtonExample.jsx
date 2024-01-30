@@ -26,7 +26,7 @@ export default function ButtonExample({isAsync = false}) {
             </button>
             <div>
                 <p>Add Count: {additionCount}</p>
-                <p>Substraction Count: {subtractionCount}</p>
+                <p>Subtraction Count: {subtractionCount}</p>
             </div>
         </div>
     </div>)
