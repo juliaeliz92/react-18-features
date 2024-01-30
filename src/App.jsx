@@ -1,9 +1,11 @@
+import { useState } from "react";
 import AutomaticBouncing from "./AutomaticBatching";
 import Transitions from "./Transitions";
 import Suspense from "./Suspense";
 import "./styles.scss";
 
 function App() {
+  const [isMenuOpen, setMenuOpen] = useState(false)
   const scrollDownToSection = (sectionId) => {
     const learnMore = document.getElementById(sectionId);
     learnMore.scrollIntoView({ behavior: "smooth"});
@@ -11,13 +13,30 @@ function App() {
   return (
     <>
       <div className="hero-image">
-          <div className="title">
-            <h2>
-              <i className="fa-brands fa-react"></i>REACT 18 FEATURES
-            </h2>
-            <button onClick={() => scrollDownToSection('learn-more-section')}>Learn More</button>
-          </div>
+        <div className="title">
+          <h2>
+            <i className="fa-brands fa-react"></i>REACT 18 FEATURES
+          </h2>
+          <button onClick={() => scrollDownToSection('learn-more-section')}>Learn More</button>
         </div>
+      </div>
+      <div class="fab-container">
+        <input type="checkbox" id="toggle" checked={isMenuOpen} onClick={() => setMenuOpen(!isMenuOpen)}/>
+        <label class="button" for="toggle"></label>
+        <nav class="nav">
+          <ul>
+            <li onClick={() => scrollDownToSection('automatic-batching')}>
+              <i className="fa-solid fa-laptop-code"></i> <span>Automatic Batching</span>
+            </li>
+            <li onClick={() => scrollDownToSection('transition')}>
+              <i className="fa-solid fa-laptop-code"></i> <span>Transition</span>
+            </li>
+            <li onClick={() => scrollDownToSection('suspense')}>
+              <i className="fa-solid fa-laptop-code"></i> <span>Suspense</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <div id="learn-more-section">
         <img src="/images/learn-more-image.jpg" alt="a cool pic goes here" />
         <div className="learn-more-content">
@@ -35,7 +54,7 @@ function App() {
             </li>
             <li onClick={() => scrollDownToSection('suspense')}>
               <i className="fa-solid fa-laptop-code"></i> <span>Suspense</span>
-              </li>
+            </li>
           </ul>
         </div>
       </div>
@@ -46,7 +65,7 @@ function App() {
             <p>The beauty of this feature is accumulating multiple state updates into a single update including updates from promise, event handlers and timeout which improves the performance.</p>
             <p>
               &#128393; The console is called only once despite the numerous state updates. Unlike the previous versions, React 18's automatic batching
-              prevent unnecessary component rerendering even with async events. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/AutomaticBatching"><i class="fa-brands fa-github"></i>Click here to check out the code</a>
+              prevent unnecessary component rerendering even with async events. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/AutomaticBatching"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
             </p>         
           </div>
           <div>
@@ -62,7 +81,7 @@ function App() {
               &#128393; As you can see in the code, the loop checking for the multiples
               is wrapped in startTransition hook. This function interrupts
               the input onchange function because the urgency is over the
-              former function. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Transitions"><i class="fa-brands fa-github"></i>Click here to check out the code</a>
+              former function. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Transitions"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
             </p>
           </div>
           <div>
@@ -74,7 +93,7 @@ function App() {
             <h3>&#8987;Suspense</h3>
             <p>This feature helps to load a temporary UI until the main UI is ready.</p>
             <p>
-              &#128393; The component is wrapped in React's Suspense component. While the child component fetches message from a promise, the suspense load fallback UI. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Suspense"><i class="fa-brands fa-github"></i>Click here to check out the code</a>
+              &#128393; The component is wrapped in React's Suspense component. While the child component fetches message from a promise, the suspense load fallback UI. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Suspense"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
             </p>
           </div>
           <div>
