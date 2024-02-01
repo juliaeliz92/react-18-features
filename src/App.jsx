@@ -1,26 +1,30 @@
-import { useState } from "react";
+//import { useState } from "react";
 import AutomaticBouncing from "./AutomaticBatching";
 import Transitions from "./Transitions";
 import Suspense from "./Suspense";
 import "./styles.scss";
 
 function App() {
-  const [isMenuOpen, setMenuOpen] = useState(false)
+  //const [isMenuOpen, setMenuOpen] = useState(false)
   const scrollDownToSection = (sectionId) => {
     const learnMore = document.getElementById(sectionId);
     learnMore.scrollIntoView({ behavior: "smooth"});
   }
   return (
-    <>
-      <div className="hero-image">
-        <div className="title">
-          <h2>
-            <i className="fa-brands fa-react"></i>REACT 18 FEATURES
-          </h2>
-          <button onClick={() => scrollDownToSection('learn-more-section')}>Learn More</button>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col">
+          <div className="hero-image">
+            <div className="title">
+              <h2>
+                <i className="fa-brands fa-react"></i>REACT 18 FEATURES
+              </h2>
+              <button onClick={() => scrollDownToSection('learn-more-section')}>Learn More</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="fab-container">
+      {/* <div class="fab-container">
         <input type="checkbox" id="toggle" checked={isMenuOpen} onClick={() => setMenuOpen(!isMenuOpen)}/>
         <label class="button" for="toggle"></label>
         <nav class="nav">
@@ -36,10 +40,12 @@ function App() {
             </li>
           </ul>
         </nav>
-      </div>
-      <div id="learn-more-section">
-        <img src="/images/learn-more-image.jpg" alt="a cool pic goes here" />
-        <div className="learn-more-content">
+      </div> */}
+      <div className="row" id="learn-more-section">
+        <div className="col-12 col-md-6">
+          <img src="/images/learn-more-image.jpg" alt="a cool pic goes here" />
+        </div>
+        <div className="col-12 col-md-6 learn-more-content">
           <p>
             Hey, there! I have created this website to showcase features introduced by React 18 with working examples. 
           </p>
@@ -58,67 +64,65 @@ function App() {
           </ul>
         </div>
       </div>
-      <div className="content">
-        <section id='automatic-batching'>
-          <div>
-            <h3>&#128230;Automatic Batching</h3>
-            <p>The beauty of this feature is accumulating multiple state updates into a single update including updates from promise, event handlers and timeout which improves the performance.</p>
-            <p>
-              &#128393; The console is called only once despite the numerous state updates. Unlike the previous versions, React 18's automatic batching
-              prevent unnecessary component rerendering even with async events. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/AutomaticBatching"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
-            </p>         
-          </div>
-          <div>
+      <div className="row" id='automatic-batching'>
+        <div className="col-12 col-md-6">
+          <h3>&#128230;Automatic Batching</h3>
+          <p>The beauty of this feature is accumulating multiple state updates into a single update including updates from promise, event handlers and timeout which improves the performance.</p>
+          <p>
+            &#128393; The console is called only once despite the numerous state updates. Unlike the previous versions, React 18's automatic batching
+            prevent unnecessary component rerendering even with async events. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/AutomaticBatching"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
+          </p>         
+        </div>
+        <div className="col-12 col-md-6">
             <p>Turn on console log to behold the power of automatic batching!</p>
             <AutomaticBouncing />
-          </div>
-        </section>
-        <section id='transition'>
-          <div>
-            <h3>&#8634;Transition</h3>
-            <p>This feature is essential when an operation(s) is prioritized over the other(s). Transition is handy in examples like expecting an action following an input typing. The typing example is in high priority while the action following it is paused until the first opertion is done. The less prioritized is wrapped inside the function from <code>useTransition</code> hook.</p>
-            <p>
-              &#128393; As you can see in the code, the loop checking for the multiples
-              is wrapped in startTransition hook. This function interrupts
-              the input onchange function because the urgency is over the
-              former function. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Transitions"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
-            </p>
-          </div>
-          <div>
-            <Transitions />
-          </div>
-        </section>
-        <section id='suspense'>
-          <div>
-            <h3>&#8987;Suspense</h3>
-            <p>This feature helps to load a temporary UI until the main UI is ready.</p>
-            <p>
-              &#128393; The component is wrapped in React's Suspense component. While the child component fetches message from a promise, the suspense load fallback UI. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Suspense"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
-            </p>
-          </div>
-          <div>
-            <div className="example-container">
-              <div className="example">
-                <pre>
-                  <code>
-                    {`<Suspense fallback={<h1>Loading...</h1>}>
-                        <SuspenseChild />
-                      </Suspense>`}
-                  </code>
-                </pre>
-              </div>
-            </div>
-            <p><code>{`SuspenseChild`}</code> throws a promise when the UI is loading aka api haven't returned the data which triggers the fallback in <code>{`Suspense`}</code>. Below is the working example of the code.</p>
-            <p>Click on the button to reveal a secret message.</p>
-            <div className="example-container">
-              <div className="example">               
-                <Suspense />
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
-    </>
+      <div className="row" id='transition'>
+        <div className="col-12 col-md-6">
+          <h3>&#8634;Transition</h3>
+          <p>This feature is essential when an operation(s) is prioritized over the other(s). Transition is handy in examples like expecting an action following an input typing. The typing example is in high priority while the action following it is paused until the first opertion is done. The less prioritized is wrapped inside the function from <code>useTransition</code> hook.</p>
+          <p>
+            &#128393; As you can see in the code, the loop checking for the multiples
+            is wrapped in startTransition hook. This function interrupts
+            the input onchange function because the urgency is over the
+            former function. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Transitions"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
+          </p>
+        </div>
+        <div className="col-12 col-md-6">
+          <Transitions />
+        </div>
+      </div>
+      <div className="row" id='suspense'>
+        <div className="col-12 col-md-6">
+          <h3>&#8987;Suspense</h3>
+          <p>This feature helps to load a temporary UI until the main UI is ready.</p>
+          <p>
+            &#128393; The component is wrapped in React's Suspense component. While the child component fetches message from a promise, the suspense load fallback UI. <a href="https://github.com/juliaeliz92/react-18-features/tree/main/src/Suspense"><i className="fa-brands fa-github"></i>Click here to check out the code</a>
+          </p>
+        </div>
+        <div className="col-12 col-md-6">
+          <div className="example-container">
+            <div className="example">
+              <pre>
+                <code>
+                  {`<Suspense fallback={<h1>Loading...</h1>}>
+                      <SuspenseChild />
+                    </Suspense>`}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <p><code>{`SuspenseChild`}</code> throws a promise when the UI is loading aka api haven't returned the data which triggers the fallback in <code>{`Suspense`}</code>. Below is the working example of the code.</p>
+          <p>Click on the button to reveal a secret message.</p>
+          <div className="example-container">
+            <div className="example">               
+              <Suspense />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
