@@ -1,11 +1,11 @@
-//import { useState } from "react";
+import { useState } from "react";
 import AutomaticBouncing from "./AutomaticBatching";
 import Transitions from "./Transitions";
 import Suspense from "./Suspense";
 import "./styles.scss";
 
 function App() {
-  //const [isMenuOpen, setMenuOpen] = useState(false)
+  const [isMenuOpen, setMenuOpen] = useState(false)
   const scrollDownToSection = (sectionId) => {
     const learnMore = document.getElementById(sectionId);
     learnMore.scrollIntoView({ behavior: "smooth"});
@@ -24,7 +24,7 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <div class="fab-container">
+      <div class="fab-container sticky-bottom">
         <input type="checkbox" id="toggle" checked={isMenuOpen} onClick={() => setMenuOpen(!isMenuOpen)}/>
         <label class="button" for="toggle"></label>
         <nav class="nav">
@@ -40,12 +40,12 @@ function App() {
             </li>
           </ul>
         </nav>
-      </div> */}
-      <div className="row" id="learn-more-section">
-        <div className="col-12 col-md-6">
+      </div>
+      <div className="row p-4" id="learn-more-section">
+        <div className="col-12 col-md-6 align-self-center text-center">
           <img src="/images/learn-more-image.jpg" alt="a cool pic goes here" />
         </div>
-        <div className="col-12 col-md-6 learn-more-content">
+        <div className="col-12 col-md-6 pt-md-0 pt-3">
           <p>
             Hey, there! I have created this website to showcase features introduced by React 18 with working examples. 
           </p>
@@ -64,7 +64,7 @@ function App() {
           </ul>
         </div>
       </div>
-      <div className="row" id='automatic-batching'>
+      <div className="row p-4 content" id='automatic-batching'>
         <div className="col-12 col-md-6">
           <h3>&#128230;Automatic Batching</h3>
           <p>The beauty of this feature is accumulating multiple state updates into a single update including updates from promise, event handlers and timeout which improves the performance.</p>
@@ -78,7 +78,7 @@ function App() {
             <AutomaticBouncing />
         </div>
       </div>
-      <div className="row" id='transition'>
+      <div className="row p-4 content" id='transition'>
         <div className="col-12 col-md-6">
           <h3>&#8634;Transition</h3>
           <p>This feature is essential when an operation(s) is prioritized over the other(s). Transition is handy in examples like expecting an action following an input typing. The typing example is in high priority while the action following it is paused until the first opertion is done. The less prioritized is wrapped inside the function from <code>useTransition</code> hook.</p>
@@ -93,7 +93,7 @@ function App() {
           <Transitions />
         </div>
       </div>
-      <div className="row" id='suspense'>
+      <div className="row p-4 content" id='suspense'>
         <div className="col-12 col-md-6">
           <h3>&#8987;Suspense</h3>
           <p>This feature helps to load a temporary UI until the main UI is ready.</p>
