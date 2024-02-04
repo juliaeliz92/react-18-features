@@ -16,7 +16,7 @@ export default function ButtonExample({isAsync = false}) {
     };
     return (
     <div className="example-container">
-        <div className="example">
+        <div className="example" aria-label="example">
             <button
                 onClick={() => {
                     handleOnClick();

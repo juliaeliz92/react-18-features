@@ -5,7 +5,7 @@ export default function SuspenseExample() {
   const [message, setMessage] = useState('')
   
   return (
-    <div>
+    <div aria-label="example">
       <button
         className="feature-buttons"
         onClick={() => setMessage(true)}

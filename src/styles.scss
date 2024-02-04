@@ -204,6 +204,10 @@ html {
       background: #fff;
       transition: all 0.4s ease;
     }
+
+    &:hover, &:focus {
+      border: 2px solid blue;
+    }
   }
 
   .nav {

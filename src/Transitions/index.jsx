@@ -24,7 +24,7 @@ export default function Transitions() {
         multiples of the number you entered for upto 500000000
       </p>
       <div className="example-container">
-        <div className="example">
+        <div className="example" aria-label="example">
           <input
             value={multiplier}
             type="number"
@@ -38,7 +38,7 @@ export default function Transitions() {
       <p>This is how the code goes.</p>
       <div className="example-container">
         <div className="example">
-          <pre>
+          <pre aria-label="code">
             <code>
             { 
               `const onChangeInput = (input) => {
