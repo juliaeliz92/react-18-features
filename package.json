@@ -2,7 +2,7 @@
   "name": "test-features-react-18",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http: //juliaeliz92.github.io/react-18-features",
+  "homepage": "http://juliaeliz92.github.io/react-18-features",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
