@@ -109,7 +109,7 @@ function App() {
       <div className="row p-4 content" id='transition' role="main">
         <div className="col-12 col-md-6">
           <h3 role="term">&#8634;Transition</h3>
-          <p role="definition">This feature is essential when an operation(s) is prioritized over the other(s). Transition is handy in examples like expecting an action following an input typing. The typing example is in high priority while the action following it is paused until the first opertion is done. The less prioritized is wrapped inside the function from <code>useTransition</code> hook.</p>
+          <p role="definition">This feature is essential when an operation(s) is prioritized over the other(s). Transition is handy in examples like expecting an action following an input typing. The typing example is in high priority while the action following it is paused until the first operation is done. The less prioritized is wrapped inside the function from <code>useTransition</code> hook.</p>
           <p role="note">
             &#128393; As you can see in the code, the loop checking for the multiples
             is wrapped in startTransition hook. This function interrupts
