@@ -24,10 +24,10 @@ function App() {
           </div>
         </div>
       </div>
-      <div class="fab-container sticky-bottom">
+      <div className="fab-container sticky-bottom">
         <input type="checkbox" id="toggle" checked={isMenuOpen} onClick={() => setMenuOpen(!isMenuOpen)}/>
-        <label class="button" for="toggle"></label>
-        <nav class="nav">
+        <label className="button" htmlFor="toggle"></label>
+        <nav className="nav">
           <ul>
             <li onClick={() => scrollDownToSection('automatic-batching')}>
               <i className="fa-solid fa-laptop-code"></i> <span>Automatic Batching</span>

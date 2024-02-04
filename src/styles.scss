@@ -248,4 +248,35 @@ html {
       }
     }
   }
+
+  @media only screen and (max-width: 768px) and (min-width: 426px) {
+    .nav {
+      width: 40vw;
+      left: 50vw;
+      bottom: 30vh;
+    }
+  }
+
+  @media only screen and (max-width: 426px) {
+    .button {
+      bottom: -6vh;
+      left: 80vw;
+    }
+
+    .nav {
+      width: 50vw;
+      left: 40vw;
+      bottom: 45vh;
+    }
+  }
+
+  @media only screen and (max-width: 321px) {
+    .button {
+      bottom: -54px;
+    }
+
+    .nav {
+      bottom: 43vh;
+    }
+  }
 }
